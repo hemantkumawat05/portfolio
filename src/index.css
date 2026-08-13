@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2563eb;
+  --color-brand-light: #3b82f6;
+  --color-brand-dark: #1d4ed8;
+  --color-accent: #0ea5e9;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+@utility text-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
