@@ -1,80 +1,125 @@
 import React from 'react';
-import { Briefcase, CalendarDays, Building2 } from 'lucide-react';
+import {
+  Award,
+  ExternalLink,
+  CalendarDays,
+  Building2,
+} from 'lucide-react';
 
-const experiences = [
+import img from "../assets/apex.png"
+
+const certificates = [
   {
-    role: 'MERN Stack Developer Intern',
-    company: 'True Value Infosoft Pvt. Ltd., Jaipur',
-    period: 'June 2026 – August 2026',
-    duration: '90 Days',
-    points: [
-      'Developed full-stack web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).',
-      'Built RESTful APIs, integrated MongoDB, and implemented JWT-based authentication.',
-      'Designed responsive React.js interfaces using Tailwind CSS and collaborated using Git.',
-    ],
+    title: 'MERN Stack Development',
+    issuer: 'True Value Infosoft Pvt. Ltd.',
+    date: 'August 2026',
+    image: img,
+    description:
+      'Certificate of completion for successfully completing the MERN Stack Development internship and gaining practical experience in full-stack web development.',
   },
   {
-    role: 'Frontend Developer Intern',
-    company: 'Apex Planet Software Pvt. Ltd.',
-    period: 'May 2025 – June 2025',
-    duration: '45 Days',
-    points: [
-      'Developed responsive and user-friendly web pages using HTML, CSS, and JavaScript.',
-      'Implemented interactive features and improved overall frontend user experience.',
-    ],
+    title: 'Frontend Development',
+    issuer: 'Apex Planet Software Pvt. Ltd.',
+    date: 'June 2025',
+    image: img,
+    description:
+      'Certificate of completion for successfully completing the Frontend Development internship with practical experience in modern web technologies.',
   },
 ];
 
-const Experience = () => {
+const Certificates = () => {
+  const handlePreview = (image) => {
+    window.open(image, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <section id="experience" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-blue-600 font-semibold text-sm tracking-widest uppercase mb-3">Where I've Worked</p>
-          <h2 className="text-4xl font-extrabold text-gray-900">
-            Work <span className="text-brand-gradient">Experience</span>
+    <section
+      id="certificates"
+      className="bg-blue-50/60 py-20 sm:py-24 lg:py-28"
+    >
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            Professional Journey
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-5xl">
+            Real-World <span className="text-blue-600">Work-Experience</span>
           </h2>
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
+            Real-world experience gained through professional internships and hands-on
+            work in full-stack Web development.
+          </p>
+
         </div>
+        <div className="mx-auto max-w-5xl space-y-8">
 
-        {/* Timeline */}
-        <div className="relative flex flex-col gap-10 pl-8 md:pl-16 before:absolute before:left-4 md:before:left-8 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-200">
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="relative">
-              {/* Dot */}
-              <div className="absolute -left-[2.15rem] md:-left-[2.15rem] top-6 w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center shadow-md shadow-blue-200">
-                <Briefcase size={16} className="text-white" />
-              </div>
-
-              {/* Card */}
-              <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-                {/* Top */}
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{exp.role}</h3>
-                    <p className="flex items-center gap-1.5 text-gray-500 text-sm mt-1">
-                      <Building2 size={14} className="text-blue-600" /> {exp.company}
-                    </p>
+          {certificates.map((certificate) => (
+            <article
+              key={certificate.title}
+              className="group rounded-2xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md sm:p-4"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-[40%_minmax(0,1fr)] md:gap-8">
+                <div className="min-w-0">
+                  <div className="overflow-hidden rounded-lg bg-gray-100">
+                    <img
+                      src={certificate.image}
+                      alt={certificate.title}
+                      className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
+                    />
                   </div>
-                  <div className="flex flex-col items-start md:items-end gap-1 shrink-0">
-                    <span className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100">
-                      <CalendarDays size={12} /> {exp.period}
+                  <button
+                    type="button"
+                    onClick={() => handlePreview(certificate.image)}
+                    className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-700 active:scale-[0.98]"
+                  >
+                    <ExternalLink size={16} />
+                    Preview Certificate
+                  </button>
+
+                </div>
+                <div className="flex min-w-0 flex-col justify-center px-1 py-2 sm:px-2">
+                  <div className="mb-4 flex items-center gap-2">
+
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 transition-transform duration-300 group-hover:scale-105">
+                      <Award size={18} />
+                    </div>
+
+                    <span className="text-xs font-semibold uppercase tracking-[0.15em] text-blue-600">
+                      Certificate
                     </span>
-                    <span className="text-xs text-gray-400 font-medium">{exp.duration}</span>
+
+                  </div>
+                  <h3 className="text-xl font-bold leading-tight text-black sm:text-2xl">
+                    {certificate.title}
+                  </h3>
+                  <div className="mt-4 flex items-start gap-2 text-sm text-gray-700">
+                    <Building2
+                      size={16}
+                      className="mt-0.5 shrink-0 text-blue-600"
+                    />
+
+                    <span>{certificate.issuer}</span>
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-sm text-gray-600">
+                    <CalendarDays
+                      size={16}
+                      className="shrink-0 text-blue-600"
+                    />
+
+                    <span>{certificate.date}</span>
+                  </div>
+                  <div className="my-6 h-px bg-gray-100" />
+                  <p className="text-sm leading-7 text-gray-600 sm:text-[15px]">
+                    {certificate.description}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-sm font-medium text-blue-600">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+                    Verified Achievement
                   </div>
                 </div>
-
-                {/* Points */}
-                <ul className="flex flex-col gap-2.5 mt-4">
-                  {exp.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-600 text-sm leading-relaxed">
-                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -82,4 +127,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Certificates;
