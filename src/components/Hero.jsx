@@ -151,7 +151,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Greeting */}
             <p className="mb-2 text-lg font-medium text-gray-500">
               Hello, I'm
             </p>

@@ -12,25 +12,24 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Education', href: '/education' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm py-3'
-          : 'bg-white py-5'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm py-3'
+        : 'bg-white py-5'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="font-bold text-2xl no-underline">
+        <a href="/" className="font-bold text-2xl no-underline">
           <span className="text-brand-gradient">HK.</span>
         </a>
 
@@ -64,9 +63,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-md flex flex-col transition-all duration-300 ${
-          isMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'
-        }`}
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-md flex flex-col transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'
+          }`}
       >
         {navLinks.map((link) => (
           <a
