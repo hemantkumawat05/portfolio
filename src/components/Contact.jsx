@@ -1,20 +1,10 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import {
-  Mail,
-  Send,
-  User,
-  MessageSquare,
-  CheckCircle,
-  AlertCircle,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { Mail, Send, User, MessageSquare, CheckCircle, AlertCircle, MapPin, Phone, } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const form = useRef();
-
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({
     type: "",
@@ -65,50 +55,35 @@ const Contact = () => {
       className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
     >
       <div className="mx-auto max-w-6xl">
-
-        {/* ================= SECTION HEADER ================= */}
         <div className="mb-12 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
-            Contact
+            Get In Touch
           </p>
-
           <h2 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl lg:text-5xl">
-            Let's work together
+            Let's Connect
           </h2>
-
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-500 sm:text-lg">
-            Have a project, opportunity, or idea in mind?
-            Send me a message and I'll get back to you as soon as possible.
+            Have an opportunity, project, or idea you'd like to discuss?
+            Feel free to reach out. I'd be happy to connect and hear from you.
           </p>
         </div>
 
-        {/* ================= MAIN CONTENT ================= */}
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-
-          {/* ================= LEFT SIDE ================= */}
           <div className="flex flex-col justify-center">
 
             <div className="rounded-2xl bg-gray-50 p-7 sm:p-8">
-
-              {/* Icon */}
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white">
                 <Mail size={21} />
               </div>
 
               <h3 className="text-2xl font-bold text-gray-950">
-                Get in touch
+                Let's Connect
               </h3>
-
               <p className="mt-3 text-sm leading-7 text-gray-500 sm:text-base">
-                I'm always open to discussing new projects, internship
-                opportunities, freelance work, collaborations, or interesting
-                ideas.
+                Interested in working together or discussing an opportunity?
+                I'd be glad to connect and explore how we can collaborate.
               </p>
-
-              {/* Contact Details */}
               <div className="mt-7 space-y-5 border-t border-gray-200 pt-6">
-
-                {/* Email */}
                 <a
                   href="mailto:kumawathemant059@gmail.com"
                   className="group flex items-center gap-4 no-underline"
@@ -127,8 +102,6 @@ const Contact = () => {
                     </p>
                   </div>
                 </a>
-
-                {/* Phone */}
                 <a
                   href="tel:+917737364751"
                   className="group flex items-center gap-4 no-underline"
@@ -147,8 +120,6 @@ const Contact = () => {
                     </p>
                   </div>
                 </a>
-
-                {/* Location */}
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-blue-600">
                     <MapPin size={17} />
@@ -165,8 +136,6 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Social Links */}
               <div className="mt-7 border-t border-gray-200 pt-6">
                 <p className="mb-3 text-xs font-medium uppercase tracking-wide text-gray-400">
                   Connect with me
@@ -198,16 +167,12 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-          {/* ================= CONTACT FORM ================= */}
           <div>
             <form
               ref={form}
               onSubmit={sendEmail}
               className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:p-8"
             >
-
-              {/* Name */}
               <div>
                 <label
                   htmlFor="name"
@@ -221,7 +186,6 @@ const Contact = () => {
                     size={18}
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
                   />
-
                   <input
                     id="name"
                     name="name"
@@ -233,8 +197,6 @@ const Contact = () => {
                   />
                 </div>
               </div>
-
-              {/* Email */}
               <div className="mt-5">
                 <label
                   htmlFor="email"
@@ -242,13 +204,11 @@ const Contact = () => {
                 >
                   Email Address
                 </label>
-
                 <div className="relative">
                   <Mail
                     size={18}
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
                   />
-
                   <input
                     id="email"
                     name="email"
@@ -259,8 +219,6 @@ const Contact = () => {
                   />
                 </div>
               </div>
-
-              {/* Message */}
               <div className="mt-5">
                 <label
                   htmlFor="message"
@@ -279,22 +237,19 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows="7"
-                    placeholder="Tell me about your project or opportunity..."
+                    placeholder="Reason for connecting..."
                     required
                     minLength={10}
                     className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 py-3.5 pl-11 pr-4 text-sm leading-6 text-gray-900 outline-none transition-all placeholder:text-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
                   />
                 </div>
               </div>
-
-              {/* Status Message */}
               {status.message && (
                 <div
-                  className={`mt-5 flex items-start gap-3 rounded-xl px-4 py-3.5 text-sm ${
-                    status.type === "success"
-                      ? "bg-green-50 text-green-700"
-                      : "bg-red-50 text-red-700"
-                  }`}
+                  className={`mt-5 flex items-start gap-3 rounded-xl px-4 py-3.5 text-sm ${status.type === "success"
+                    ? "bg-green-50 text-green-700"
+                    : "bg-red-50 text-red-700"
+                    }`}
                 >
                   {status.type === "success" ? (
                     <CheckCircle
@@ -311,8 +266,6 @@ const Contact = () => {
                   <span>{status.message}</span>
                 </div>
               )}
-
-              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}

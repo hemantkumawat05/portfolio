@@ -1,81 +1,119 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Experience', href: '/experience' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Education', href: '/education' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "Skills", href: "/skills" },
+    { name: "Experience", href: "/experience" },
+    { name: "Projects", href: "/projects" },
+    { name: "Education", href: "/education" },
   ];
-
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm py-3'
-        : 'bg-white py-5'
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${isScrolled
+        ? "border-b border-white/10 bg-[#18181B]/95 shadow-lg shadow-black/5 backdrop-blur-xl"
+        : "bg-[#18181B]"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="/" className="font-bold text-2xl no-underline">
-          <span className="text-brand-gradient">HK.</span>
+      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
+        <a
+          href="/"
+          className="group flex items-center gap-2.5 no-underline"
+        >
+         <img
+            src={logo}
+            alt="Hemant Kumawat Logo"
+            className="h-11 w-auto object-contain transition-opacity duration-200 group-hover:opacity-90 sm:h-12"
+          />
+
+          <div className="hidden sm:block">
+            <p className="text-sm font-bold leading-none text-white">
+              Hemant Kumawat
+            </p>
+
+            <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.15em] text-gray-400">
+              Developer
+            </p>
+          </div>
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-600 font-medium text-sm no-underline hover:text-blue-600 transition-colors duration-200"
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-gray-300 no-underline transition-all duration-200 hover:bg-white/5 hover:text-white"
             >
               {link.name}
             </a>
           ))}
           <a
-            href="mailto:kumawathemant059@gmail.com"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2 rounded-lg no-underline transition-colors duration-200"
+            href="/contact"
+            className="group ml-4 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white no-underline transition-all duration-200 hover:bg-blue-500"
           >
-            Hire Me
+            Contact
+            <ArrowUpRight
+              size={15}
+              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
-          className="md:hidden text-gray-700 bg-transparent border-none cursor-pointer"
+          type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white md:hidden"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
-
-      {/* Mobile menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-md flex flex-col transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'
+        className={`overflow-hidden border-t border-white/10 bg-[#18181B] transition-all duration-300 md:hidden ${isMenuOpen
+          ? "max-h-[500px] opacity-100"
+          : "max-h-0 opacity-0"
           }`}
       >
-        {navLinks.map((link) => (
+        <div className="px-5 py-3 sm:px-8">
+
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="block border-b border-white/5 px-2 py-4 text-sm font-medium text-gray-300 no-underline transition-colors duration-200 last:border-none hover:text-white"
+            >
+              {link.name}
+            </a>
+          ))}
           <a
-            key={link.name}
-            href={link.href}
-            className="px-6 py-4 text-gray-700 font-medium no-underline border-b border-gray-100 last:border-none hover:text-blue-600 transition-colors"
+            href="/contact"
             onClick={() => setIsMenuOpen(false)}
+            className="group mt-3 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white no-underline transition-colors duration-200 hover:bg-blue-500"
           >
-            {link.name}
+            Contact
+            <ArrowUpRight
+              size={16}
+              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </a>
-        ))}
+        </div>
       </div>
     </nav>
   );

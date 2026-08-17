@@ -54,32 +54,10 @@ const Hero = () => {
               focus on clean architecture, responsive interfaces and
               practical AI integrations.
             </p>
-            {/* <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-gray-500">
-              <a
-                href="tel:+917737364751"
-                className="flex items-center gap-2 text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <Phone size={15} className="text-blue-600" />
-                +91 7737364751
-              </a>
-
-              <a
-                href="mailto:kumawathemant059@gmail.com"
-                className="flex items-center gap-2 text-gray-500 no-underline transition-colors hover:text-gray-900"
-              >
-                <Mail size={15} className="text-blue-600" />
-                kumawathemant059@gmail.com
-              </a>
-
-              <span className="flex items-center gap-2">
-                <MapPin size={15} className="text-blue-600" />
-                Jaipur, Rajasthan
-              </span>
-            </div> */}
             <div className="mt-9 flex flex-wrap items-center gap-3">
 
               <a
-                href="mailto:kumawathemant059@gmail.com"
+                href="/contact"
                 className="group inline-flex h-12 items-center gap-2 rounded-lg bg-gray-950 px-5 text-sm font-semibold text-white no-underline transition-all duration-200 hover:bg-blue-600"
               >
                 Get In Touch
@@ -90,7 +68,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="/Hemant-Kumawat-Resume.pdf"
+                href="../src/assets/Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center gap-2 rounded-lg border border-gray-200 px-5 text-sm font-semibold text-gray-700 no-underline transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
