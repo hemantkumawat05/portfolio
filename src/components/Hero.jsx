@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import profileImage from "../assets/myimg.png";
+import resumePdf from "../assets/Resume.pdf";
 
 const Hero = () => {
   return (
@@ -68,7 +69,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="../src/assets/Resume.pdf"
+                href={resumePdf}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center gap-2 rounded-lg border border-gray-200 px-5 text-sm font-semibold text-gray-700 no-underline transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"

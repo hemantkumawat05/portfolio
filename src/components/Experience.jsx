@@ -12,7 +12,7 @@ const certificates = [
   {
     title: 'MERN Stack Development',
     issuer: 'True Value Infosoft Pvt. Ltd.',
-    date: 'August 2026',
+    date: '01 June 2026 - 31 August 2026 (3 Months)',
     image: img,
     description:
       'Certificate of completion for successfully completing the MERN Stack Development internship and gaining practical experience in full-stack web development.',
@@ -20,7 +20,7 @@ const certificates = [
   {
     title: 'Frontend Development',
     issuer: 'Apex Planet Software Pvt. Ltd.',
-    date: 'June 2025',
+    date: 'June 2025 (45 Days )',
     image: img,
     description:
       'Certificate of completion for successfully completing the Frontend Development internship with practical experience in modern web technologies.',

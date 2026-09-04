@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import logo from "../assets/logo.png"
+import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
+import logo from "../assets/logo.png";
+import resumePdf from "../assets/Resume.pdf";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,11 +63,22 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+
+          <a
+            href={resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group ml-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/5 px-3.5 py-2 text-sm font-semibold text-gray-200 no-underline transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
+          >
+            <FileText size={15} className="text-gray-300 group-hover:text-white transition-colors" />
+            <span>Resume</span>
+          </a>
+
           <a
             href="/contact"
-            className="group ml-4 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white no-underline transition-all duration-200 hover:bg-blue-500"
+            className="group ml-2 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white no-underline transition-all duration-200 hover:bg-blue-500"
           >
-            Contact
+            <span>Contact</span>
             <ArrowUpRight
               size={15}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -102,12 +114,24 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+
+          <a
+            href={resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMenuOpen(false)}
+            className="group mt-3 flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-gray-200 no-underline transition-colors duration-200 hover:bg-white/10 hover:text-white"
+          >
+            <FileText size={16} />
+            <span>Resume</span>
+          </a>
+
           <a
             href="/contact"
             onClick={() => setIsMenuOpen(false)}
-            className="group mt-3 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white no-underline transition-colors duration-200 hover:bg-blue-500"
+            className="group mt-2 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white no-underline transition-colors duration-200 hover:bg-blue-500"
           >
-            Contact
+            <span>Contact</span>
             <ArrowUpRight
               size={16}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

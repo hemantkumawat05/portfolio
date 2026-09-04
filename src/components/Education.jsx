@@ -6,19 +6,19 @@ const education = [
     degree: 'B.Tech in Artificial Intelligence and Data Science',
     institution: 'College of Technology and Engineering, Udaipur',
     period: '2023 - 2027',
-    score: 'CGPA: 7.8/10',
+    score: 'CGPA: 7.95/10',
   },
   {
     degree: 'Class XII (RBSE)',
     institution: 'SRK Khandelwal Sr. Sec. School, Jobner, Jaipur',
     period: '2022',
-    score: '89.5%',
+    score: '89.60%',
   },
   {
     degree: 'Class X (RBSE)',
     institution: 'G.A.V.M. Sr. Sec. School, Jobner, Jaipur',
     period: '2020',
-    score: '87.5%',
+    score: '87.50%',
   },
 ];
 
@@ -97,24 +97,3 @@ const Education = () => {
 };
 
 export default Education;
-
-
-
-
-{/* <div className="flex flex-col gap-6">
-            <div className="bg-gradient-to-br from-blue-600 to-sky-500 rounded-2xl p-8 text-white flex flex-col items-center text-center shadow-lg shadow-blue-200 h-full justify-center gap-4">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                <Trophy size={32} className="text-white" />
-              </div>
-              <div>
-                <h3 className="font-bold text-xl">LeetCode</h3>
-                <p className="text-blue-100 text-sm mt-1">Problem Solving</p>
-              </div>
-              <div className="text-5xl font-extrabold">250+</div>
-              <p className="text-blue-100 text-sm leading-relaxed">
-                DSA problems solved, strengthening algorithmic thinking and problem-solving skills.
-              </p>
-              <span className="text-xs font-semibold bg-white/20 px-4 py-2 rounded-full mt-2 border border-white/30">
-                🏆 Active Achiever
-              </span>
-            </div> */}

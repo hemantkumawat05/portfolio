@@ -1,28 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, ArrowRight } from 'lucide-react';
-import astroimg from "../assets/asto.png";
+import astroimg from "../assets/astro.png";
+import ecomimg from "../assets/ecom.png";
+import ecomadminimg from "../assets/ecomadmin.png";
+import astroadminimg from "../assets/astroadmin.png";
+import blog1 from "../assets/blog1.png";
 
 const projects = [
   {
     title: 'JYOTISHH VAASTU',
     image: astroimg,
-    description: 'AI-powered numerology and astrology platform generating personalized reports in English and Hindi with automated PDF generation and online payments.',
+    description: 'AI-powered numerology and astrology platform generating personalized reports in English and Hindi.',
     detailsLink: '/projects/jyotishh-vaastu',
     liveLink: 'https://astrology-r1ns.vercel.app/'
   },
   {
-    title: 'E-COMMERCE',
-    image: astroimg,
-    description: 'Full-stack e-commerce platform with authentication, product management, shopping cart, order processing, and a responsive admin dashboard.',
-    detailsLink: '/projects/mern-ecommerce',
-    liveLink: 'https://astrology-r1ns.vercel.app/',
+    title: 'JYOTISHH VAASTU ADMIN',
+    image: astroadminimg,
+    description: 'Administrative portal and management dashboard for tracking Reports, Manage Vastu E-Books and  revenue',
+    detailsLink: '/projects/jyotishh-vaastu-admin',
+    liveLink: 'https://astrology-a1v6.vercel.app/'
   },
   {
     title: 'AI-POWERED DAILY BLOG',
-    image: astroimg,
-    description: 'MERN-based blogging platform using Gemini AI for content generation with search, category filtering, dynamic rendering, and content management.',
+    image: blog1,
+    description: 'MERN-based blogging platform using Google Gemini AI for smart content drafting, instant search & publishing.',
     detailsLink: '/projects/ai-blog',
-    liveLink: 'https://astrology-r1ns.vercel.app/',
+    liveLink: 'https://blogs-topaz-psi.vercel.app/',
+  },
+  {
+    title: 'E-COMMERCE',
+    image: ecomimg,
+    description: 'Full-stack e-commerce storefront with user authentication, product catalog filters, shopping cart synchronization, and checkout.',
+    detailsLink: '/projects/mern-ecommerce',
+    liveLink: 'https://ecommerce-myweb4.vercel.app/',
+  },
+  {
+    title: 'E-COMMERCE ADMIN',
+    image: ecomadminimg,
+    description: 'E-commerce management dashboard for real-time inventory control, product CRUD operations, order fulfillment tracking.',
+    detailsLink: '/projects/mern-ecommerce-admin',
+    liveLink: 'https://e-commerce-admin-myweb4.vercel.app/',
   },
 ];
 
@@ -68,13 +87,13 @@ const Projects = () => {
                 </p>
                 <div className="mt-auto grid grid-cols-2 gap-3 pt-6">
 
-                  <a
-                    href={project.detailsLink}
+                  <Link
+                    to={project.detailsLink}
                     className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-xs font-semibold text-gray-800 transition-colors duration-200 hover:border-gray-900 hover:bg-gray-50 sm:text-sm"
                   >
                     <span>View Details</span>
                     <ArrowRight size={15} />
-                  </a>
+                  </Link>
                   <a
                     href={project.liveLink}
                     target="_blank"

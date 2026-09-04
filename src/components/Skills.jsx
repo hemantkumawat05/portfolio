@@ -23,30 +23,26 @@ const leftSkills = [
   {
     icon: Server,
     title: 'Backend',
-    skills: ['Node.js', 'Express.js'],
+    skills: ['Node.js', 'Express.js' ,' REST API Development '],
   },
-  {
-    icon: Database,
-    title: 'Database',
-    skills: ['MongoDB', 'PostgreSQL'],
-  },
+ 
 ];
 
 const rightSkills = [
+   {
+    icon: Database,
+    title: 'Database',
+    skills: ['MongoDB', 'PostgreSQL','Database Management'],
+  },
   {
     icon: Wrench,
     title: 'Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Requestly'],
+    skills: ['Git', 'GitHub', 'Postman', 'Requestly'],
   },
   {
     icon: ShieldCheck,
     title: 'Technologies',
-    skills: ['REST APIs', 'JWT Authentication'],
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & Services',
-    skills: ['Cloudinary'],
+    skills: ['AI Integration', 'JWT Authentication',' Nodemailer'],
   },
 ];
 
